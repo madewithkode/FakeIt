@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Receipt - FAKEAM</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="static/css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+  <script src="static/js/main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="static/fontawesome/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="topnav" id="myTopnav">
+    <a href="/" class="active">FAKEAM</a>
+    <a href="/about" id="about">About</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </a>
+  </div>
+  
+<div class="container">
+  <div class="container" id="mycontainer">
+    <div class="text-center">
+        <img id="myimg" src="static/images/FUTO2.jpg" alt="...">
+    </div>
+      <div class="text-center">
+          <p class="ash-text school-name"><strong>FEDERAL UNIVERSITY OF TECHNOLOGY OWERRI</strong></p>
+      </div>
+      <div class="text-center">
+          <h5><strong>OFFICIAL COURSE REGISTRATION FEES</strong></h5>
+      </div>
+      <div class="text-center">
+          <p>{{ generate_numbers(self) }}</p>
+      </div>
+      <div class="text-center">
+          <img id="myimg" src= " {{ passport }} " alt="...">
+      </div>
+    
+    <div class="row">
+      <div class="col-sm-4">
+          <p class="ash-text"><strong>MATRIC/JAMB NO:</strong>
+      </div>
+      <div class="col-sm-8">
+          <p style="font-size:11pt;font-weight:normal;font-style:normal;"><u>{{ registration }}</u></p>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <p class="ash-text"><strong>NAME:</strong >
+        </div>
+        <div class="col-sm-8">
+            <p style="font-size:11pt;font-weight:normal;font-style:normal;"><u>{{ fullname }}</u></p>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-4">
+              <p class="ash-text"><strong>DEPARTMENT:</strong >
+          </div>
+          <div class="col-sm-8">
+              <p style="font-size:11pt;font-weight:normal;font-style:normal;"><u>{{ dept }}</u></p>
+          </div>
+      </div>
+       
+            
+  <table class="table table-bordered">
+    <thead>
+      <tr class="row-color">
+        <th>SN</th>
+        <th>COURSES</th>
+        <th>AMOUNT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td width="1%">1</td>
+        <td width="70%">{{ course1 }}</td>
+        <td width="29%">{{ c1amt }}</td>
+      </tr>
+      <tr class="row-color">
+        <td width="1%">2</td>
+        <td width="70%">{{ course2 }}</td>
+        <td width="29%">{{ c2amt }}</td>
+      </tr>
+      <tr>
+        <td width="1%">3</td>
+        <td width="70%">{{ course3 }}</td>
+        <td width="29%">{{ c3amt }}</td>
+      </tr>
+      <tr class="row-color">
+        <td width="1%">4</td>
+        <td width="70%">{{ course4 }}</td>
+        <td width="29%">{{ c4amt }}</td>
+      </tr>
+      <tr>
+        <td width="1%">5</td>
+        <td width="70%">{{ course5 }}</td>
+        <td width="29%">{{ c5amt }}</td>
+      </tr>
+      <tr class="row-color">
+        <td width="1%">6</td>
+        <td width="70%">{{ course6 }}</td>
+        <td width="29%">{{ c6amt }}</td>
+      </tr>
+      <tr>
+        <td width="1%">7</td>
+        <td width="70%">{{ course7 }}</td>
+        <td width="29%">{{ c7amt }}</td>
+      </tr>
+      <tr class="row-color">
+        <td width="1%"></td>
+        <td width="70%">Total</td>
+        <td width="29%">{{ total }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-center">
+    <img id="barcode" src= {{ generate_barcode(self) }} alt="...">
+</div>
+</div>
+<div class="text-center">
+  <a href="{{ request.path }}.pdf">Print this page</a>
+</div>
+</div>
+
+</body>
+</html>

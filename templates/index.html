@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Fake Document Generator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="static/css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="static/fontawesome/css/font-awesome.min.css">
+  <script src="static/js/main.js"></script> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="topnav" id="myTopnav">
+    <a href="/" class="active">FAKEAM</a>
+    <a href="/about" id="about">About</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </a>
+  </div>
+   <div class="flash2">
+        To Get Your Passport Link:
+
+            Login to your FUTO Portal, click on your image and select "copy image location", then paste it in the Passport Link Field. If left empty, a gravatar would be used.
+        
+   </div>
+  <div class="container">
+    <div class="row">
+      <form class="form-inline" action="{{ url_for('receipt') }}" method="POST">
+        {% for message in get_flashed_messages() %}
+          <div class="flash">{{ message }}</div>
+        {% endfor %}
+        {{ form.csrf_token }}
+        {{ form.hidden_tag() }}
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label for="pwd">REG NUMBER</label>
+                {{ form.registration(class_="form-control") }}
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label for="pwd">FULL NAME</label>
+                {{ form.fullname(class_="form-control") }}
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label for="pwd">DEPARTMENT</label>
+                {{ form.dept(class_="form-control") }}
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label for="pwd">PASSPORT LINK</label>
+                {{ form.passport(class_="form-control") }}
+            </div>
+        </div>
+        <div class="col-sm-12 flash2">
+            INPUT YOUR COURSES AND DESIRED COURSE REGISTRATION AMMOUNTS
+            <p>Maximum of 7 courses allowed</p>
+        </div>
+          
+          <div class="col-sm-6">
+              <div class="form-group">
+                  <label for="pwd">COURSE 1</label>
+                  {{ form.course1(class_="form-control") }}
+              </div>
+          </div>
+          <div class="col-sm-6">
+              <div class="form-group">
+                  <label for="pwd">AMOUNT</label>
+                  {{ form.c1amt(class_="form-control") }}
+              </div>
+          </div>
+          <div class="col-sm-6">
+              <div class="form-group">
+                  <label for="pwd">COURSE 2</label>
+                  {{ form.course2(class_="form-control") }}
+              </div>
+          </div> 
+          <div class="col-sm-6">
+              <div class="form-group">
+                  <label for="email">AMOUNT</label>
+                  {{ form.c2amt(class_="form-control") }}
+              </div>
+          </div>
+          <div class="col-sm-6">
+              <div class="form-group">
+                  <label for="pwd">COURSE 3</label>
+                  {{ form.course3(class_="form-control") }}
+              </div>
+          </div>
+          <div class="col-sm-6">
+              <div class="form-group">
+                  <label for="pwd">AMOUNT</label>
+                  {{ form.c3amt(class_="form-control") }}
+              </div>
+          </div>
+          <div class="col-sm-6">
+              <div class="form-group">
+                  <label for="pwd">COURSE 4</label>
+                  {{ form.course4(class_="form-control") }}
+              </div>
+          </div>
+          <div class="col-sm-6">
+              <div class="form-group">
+                  <label for="pwd">AMOUNT</label>
+                  {{ form.c4amt(class_="form-control") }}
+              </div>
+          </div>
+          <div class="col-sm-6">
+              <div class="form-group">
+                  <label for="pwd">COURSE 5</label>
+                  {{ form.course5(class_="form-control") }}
+              </div>
+          </div>
+          <div class="col-sm-6">
+              <div class="form-group">
+                  <label for="pwd">AMOUNT</label>
+                  {{ form.c5amt(class_="form-control") }}
+              </div>
+          </div>
+          <div class="col-sm-6">
+              <div class="form-group">
+                  <label for="pwd">COURSE 6</label>
+                  {{ form.course6(class_="form-control") }}
+              </div>
+          </div>
+          <div class="col-sm-6">
+              <div class="form-group">
+                  <label for="pwd">AMOUNT</label>
+                  {{ form.c6amt(class_="form-control") }}
+              </div>
+          </div>
+          <div class="col-sm-6">
+              <div class="form-group">
+                  <label for="pwd">COURSE 7</label>
+                  {{ form.course7(class_="form-control") }}
+              </div>
+          </div>
+          <div class="col-sm-6">
+              <div class="form-group">
+                  <label for="pwd">AMOUNT</label>
+                  {{ form.c7amt(class_="form-control") }}
+              </div>
+          </div>
+        </div>
+        <div class="text-center" style="margin-top:10px;">
+            <button class="btn btn-primary btn-block" type="submit" value="generate">Generate</button>
+        </div>
+      </form> 
+    </div>
+  </div>
+</body>
+
