@@ -20,5 +20,5 @@ six==1.11.0
 style==1.1.0
 virtualenv==16.0.0
 Werkzeug==0.14.1
-certifi==0.0.8
+certifi==2022.12.7
 chardet==1.0.1
